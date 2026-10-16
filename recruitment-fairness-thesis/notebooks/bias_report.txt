@@ -1,0 +1,56 @@
+======================================================================
+AUTOMATED ALGORITHMIC BIAS REPORT — RECRUITMENT MODELS
+Protected attribute audited: Gender
+======================================================================
+
+MODEL: Logistic Regression
+----------------------------------------
+  Accuracy      : 0.8613
+  ROC-AUC       : 0.8792
+  F1-score      : 0.7570
+  DP Difference : 0.0570
+  Equal Opp Diff: 0.0698
+  Disparate Impact Ratio: 0.8029
+  Bias Score    : 0.0984
+  Risk Level    : Moderate
+  Recommendation: Investigate proxy features correlated with Gender; consider threshold adjustment or reweighting before deployment.
+
+MODEL: Decision Tree
+----------------------------------------
+  Accuracy      : 0.9120
+  ROC-AUC       : 0.8955
+  F1-score      : 0.8479
+  DP Difference : 0.0728
+  Equal Opp Diff: 0.1749
+  Disparate Impact Ratio: 0.7614
+  Bias Score    : 0.1653
+  Risk Level    : High
+  Recommendation: Do not deploy without mitigation. Apply bias mitigation (e.g. reweighting, resampling, or fairness-constrained training) and re-audit. Disparate impact ratio falls below the commonly-cited 80% ('four-fifths') rule.
+
+MODEL: Random Forest
+----------------------------------------
+  Accuracy      : 0.9227
+  ROC-AUC       : 0.9150
+  F1-score      : 0.8626
+  DP Difference : 0.0626
+  Equal Opp Diff: 0.0895
+  Disparate Impact Ratio: 0.7798
+  Bias Score    : 0.1155
+  Risk Level    : High
+  Recommendation: Do not deploy without mitigation. Apply bias mitigation (e.g. reweighting, resampling, or fairness-constrained training) and re-audit. Disparate impact ratio falls below the commonly-cited 80% ('four-fifths') rule.
+
+MODEL: XGBoost
+----------------------------------------
+  Accuracy      : 0.9173
+  ROC-AUC       : 0.9140
+  F1-score      : 0.8571
+  DP Difference : 0.0622
+  Equal Opp Diff: 0.1213
+  Disparate Impact Ratio: 0.7928
+  Bias Score    : 0.128
+  Risk Level    : High
+  Recommendation: Do not deploy without mitigation. Apply bias mitigation (e.g. reweighting, resampling, or fairness-constrained training) and re-audit. Disparate impact ratio falls below the commonly-cited 80% ('four-fifths') rule.
+
+======================================================================
+NOTE: No single metric fully captures 'fairness'. Metrics can trade off against each other; results should be interpreted alongside context, governance policy, and human review, not applied mechanically.
+======================================================================
